@@ -4,8 +4,16 @@ docker -v
 npm -v
 git -v
 npm install -g @ts.adligo.org/slink
-git clone git@github.com:adligo/fab_group_deps.ts.adligo.org.git
-git clone git@github.com:adligo/fab_group.ts.adligo.org.git
+if [ -d fab_group_deps.ts.adligo.org ]; then
+  echo fab_group_deps.ts.adligo.org alread exists
+else
+  git clone git@github.com:adligo/fab_group_deps.ts.adligo.org.git
+fi
+if [ -d fab_group.ts.adligo.org ]; then
+  echo fab_group.ts.adligo.org already exists
+else 
+  git clone git@github.com:adligo/fab_group.ts.adligo.org.git
+fi
 cd fab_group_deps.ts.adligo.org
 npm install
 cd ../fab_group.ts.adligo.org
