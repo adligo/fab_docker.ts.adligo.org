@@ -1,10 +1,8 @@
 # fab_docker.ts.adligo.org
-This project will contain various docker setups for Fabricate similar to https://github.com/adligo/slink_docker.ts.adligo.org
 
-This project will contain the various docker images that can assist with slink and the slink_group.  
+This project contains the fabricate docker images and code to checkout the various fabricate builds.
 
-
-Note:  Like SLink Fabricate (aka fab on the cli) is actually a fairly complex build because it's building a build system.  
+Currently use the Fabricate-Group section as it is the only one that has been setup.
 
 
 ### Fabricate-Solo
@@ -15,7 +13,7 @@ TODO: This will contain a method to build Fabricate in a docker image with all o
 
 ### Fabricate-Group
 
-TODO: This will contain a method to build Fabricate in a docker image with all of it's dependencies coming from local copies of the Adligo projects from github.
+This contains a method to build Fabricate in a docker image with all of it's dependencies coming from local copies of the Adligo projects and their source from github.
 
 [Fabricate-Group](fab-group/README.md)
 
