@@ -3,7 +3,7 @@ RUN apk update && apk add --no-cache bash curl unzip which
 WORKDIR /opt
 RUN curl --location --show-error -O --url "https://bun.sh/install"
 RUN bash /opt/install
-RUN npm install -g @ts.adligo.org/slink@1.5.8
+RUN npm install -g @ts.adligo.org/slink@1.5.9
 RUN npm install -g typescript
 RUN npm install -g tsx
 RUN npm install -g ts-node
@@ -13,6 +13,7 @@ COPY . .
 WORKDIR /app/fab_group_deps.ts.adligo.org
 RUN npm install
 WORKDIR /app/fab_group.ts.adligo.org
+ENV USHELL="/bin/bash"
 RUN npm run setup
 RUN npm run build
 WORKDIR /app
@@ -20,5 +21,5 @@ RUN chmod +x check_versions.sh
 RUN chmod +x run_all_tests.sh
 RUN chmod +x run_tests.sh
 ENV PATH="$PATH:/root/.bun/bin"
-ENV USHELL="/bin/bash"
+
 CMD ["bash"]
