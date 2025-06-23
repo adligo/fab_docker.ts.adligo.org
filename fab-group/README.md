@@ -5,6 +5,33 @@
 In this section of fab_docker.ts.adligo.org we are building fabricate along with all of it's
 Adligo dependencies from source.
 
+# Building in a Docker Image
+
+Note this is slower, but should be more consistent across operating systems and will allow
+you to build and run tests inside a docker image, which is also a bit safer.
+
+### Build from the Docker File;
+
+```
+docker build -t fab-group-apps .
+docker run -t fab-group-apps ./run_tests.sh
+or
+docker run -t fab-group-apps ./run_all_tests.sh
+```
+
+Note if you have been working locally you will need to remove your slinks and node_modules
+in order for the docker image to get created sucessfully.
+
+```
+cd fab_group_deps.ts.adligo.org
+rm -fr node_modules
+
+cd fab_group.ts.adligo.org
+npm run rmNm
+```
+
+# Building Locally On Your Machine
+
 ## Install prerequsites
 
 1) Nodejs
